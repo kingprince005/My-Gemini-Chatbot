@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini AI Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 600px;
+        }
+        h1 {
+            color: #4285f4;
+            margin-top: 0;
+        }
+        .button {
+            background-color: #4285f4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .disclaimer {
+            font-size: 12px;
+            color: #666;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        // Check if localStorage is working
+        function checkLocalStorage() {
+            try {
+                localStorage.setItem('test', 'test');
+                localStorage.removeItem('test');
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+        
+        window.addEventListener('load', function() {
+            // If localStorage is working, redirect to the chatbot
+            if (checkLocalStorage()) {
+                setTimeout(function() {
+                    window.location.href = 'standalone.html';
+                }, 2000); // Wait 2 seconds so the user can see the page
+            } else {
+                // Show warning if localStorage is not working
+                document.getElementById('localStorage-warning').style.display = 'block';
+                document.getElementById('redirect-message').style.display = 'none';
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Gemini AI Chatbot</h1>
+        <p id="redirect-message">Redirecting to the chatbot in a moment...</p>
+        <div id="localStorage-warning" style="display: none; color: #ff5252;">
+            <p><strong>Warning:</strong> Your browser does not support localStorage or it is disabled.</p>
+            <p>The chatbot requires localStorage to save your API key and chat history.</p>
+            <p>Please enable cookies or use a different browser.</p>
+        </div>
+        <a href="standalone.html" class="button">Go to Chatbot Now</a>
+        <p class="disclaimer">Powered by Google's Gemini AI. No data is stored on any server except when making API calls.</p>
+    </div>
+</body>
+</html> 
