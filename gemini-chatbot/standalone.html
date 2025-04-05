@@ -1064,7 +1064,7 @@
     <script>
         // Global variables - these will be initialized/updated by fix.js
         window.API_KEY = "";
-        window.IS_DEMO_MODE = false;
+        window.IS_DEMO_MODE = true;  // Set demo mode to true by default
         
         document.addEventListener("DOMContentLoaded", () => {
             console.log("DOMContentLoaded event fired");
@@ -1092,25 +1092,24 @@
             
             // Check for saved API key or demo mode
             const savedApiKey = localStorage.getItem("gemini_api_key");
-            const demoMode = localStorage.getItem("gemini_demo_mode") === "true";
+            const demoMode = localStorage.getItem("gemini_demo_mode") === "true" || true;  // Default to true
             
             // Debug the current state
             console.log("Current API Key exists:", !!window.API_KEY);
             console.log("Current Demo Mode:", window.IS_DEMO_MODE);
 
-            // Initialize API key and demo mode from localStorage
             if (savedApiKey) {
                 API_KEY = savedApiKey;
-                console.log("API key loaded from storage");
-                // Hide API key overlay
+                IS_DEMO_MODE = false;
                 apiKeyOverlay.style.display = "none";
             } else if (demoMode) {
                 IS_DEMO_MODE = true;
                 console.log("Demo mode activated");
-                // Hide API key overlay
                 apiKeyOverlay.style.display = "none";
+                // Set demo mode in localStorage
+                localStorage.setItem("gemini_demo_mode", "true");
             } else {
-                // Show API key overlay if no API key and not in demo mode
+                // This should never trigger but keep it as a fallback
                 apiKeyOverlay.style.display = "flex";
                 console.log("Showing API key overlay - no key or demo mode");
             }
