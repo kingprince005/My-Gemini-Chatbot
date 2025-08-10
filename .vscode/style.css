@@ -374,13 +374,13 @@ body * {
 /* Adjust chat list when sidebar is open on desktop */
 @media (min-width: 769px) {
     body.sidebar-open .chat-list {
-        margin-left: 35px;
+        margin-left: -50px;
         width: calc(100% - 35px);
     }
 
     /* Ensure chat list is properly centered when sidebar is closed */
     body:not(.sidebar-open) .chat-list {
-        margin-left: 350px;
+        margin-left: -200px;
         width: 100%;
     }
 }
