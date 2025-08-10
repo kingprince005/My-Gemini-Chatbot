@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (message.role === "user") {
                 // User message
                 const html = `<div class="message-content">
-                    <img src="../image/user.jpeg" alt="User" class="avatar user-avatar">
+                    <img src="image/user.jpeg" alt="User" class="avatar user-avatar">
                     <p class="text">${message.content}</p>
                 </div>`;
                 const outgoingDiv = createMessageElement(html, "outgoing");
@@ -234,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 // Bot message
                 const html = `<div class="message-content">
-                    <img src="../image/Gemini logo.png" alt="Gemini Image" class="avatar">
+                    <img src="image/Gemini logo.png" alt="Gemini Image" class="avatar">
                     <p class="text">${message.content}</p>
                     <span class="icon material-symbols-rounded">content_copy</span>
                 </div>`;
@@ -306,7 +306,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (item.role === "user") {
                         // User message
                         const html = `<div class="message-content">
-                            <img src="../image/user.jpeg" alt="User" class="avatar user-avatar">
+                            <img src="image/user.jpeg" alt="User" class="avatar user-avatar">
                             <p class="text">${item.content}</p>
                         </div>`;
                         const outgoingDiv = createMessageElement(html, "outgoing");
@@ -314,7 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     } else {
                         // Bot message
                         const html = `<div class="message-content">
-                            <img src="../image/Gemini logo.png" alt="Gemini Image" class="avatar">
+                            <img src="image/Gemini logo.png" alt="Gemini Image" class="avatar">
                             <p class="text">${item.content}</p>
                             <span class="icon material-symbols-rounded">content_copy</span>
                         </div>`;
@@ -390,7 +390,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Create and display user message
         const html = `<div class="message-content">
-            <img src="../image/user.jpeg" alt="User Image" class="avatar user-avatar">
+            <img src="image/user.jpeg" alt="User Image" class="avatar user-avatar">
             <p class="text">${userMessage.replace(/\n/g, '<br>')}</p>
         </div>`;
 
@@ -412,7 +412,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const showLoadingAnimation = (message) => {
         // Create animated typing dots
         const html = `<div class="message-content">
-            <img src="../image/Gemini logo.png" alt="Gemini Image" class="avatar">
+            <img src="image/Gemini logo.png" alt="Gemini Image" class="avatar">
             <div class="loading-indicator">
                 <div class="typing-dots">
                     <div class="dot"></div>
@@ -619,7 +619,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         // Create the message container
         const html = `<div class="message-content">
-            <img src="../image/Gemini logo.png" alt="Gemini Image" class="avatar">
+            <img src="image/Gemini logo.png" alt="Gemini Image" class="avatar">
             <p class="text"></p>
             <span class="icon material-symbols-rounded">content_copy</span>
         </div>`;
@@ -700,7 +700,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Helper to display error messages
     function displayBotError(errorText) {
         const errorHtml = `<div class="message-content">
-            <img src="../image/Gemini logo.png" alt="Gemini Image" class="avatar">
+            <img src="image/Gemini logo.png" alt="Gemini Image" class="avatar">
             <p class="text error">${errorText}</p>
             <span class="icon material-symbols-rounded">content_copy</span>
         </div>`;
@@ -840,7 +840,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 // Create a special welcome message
                 const html = `<div class="message-content welcome-message">
-                    <img src="../image/Gemini logo.png" alt="Gemini Image" class="avatar">
+                    <img src="image/Gemini logo.png" alt="Gemini Image" class="avatar">
                     <div>
                         <p class="text"></p>
                         <div class="welcome-tips" style="margin-top: 15px; display: none;">
